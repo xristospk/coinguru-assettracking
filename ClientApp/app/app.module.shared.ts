@@ -11,20 +11,18 @@ import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 
 
 import { AppCommonModule } from './common/common.module';
-import { SearchComponent } from './components/search/search.component';
 import { FetchDataDonaComponent } from './components/fetchdatadona/fetchdatadona.component';
-import { GalleryComponent } from './components/gallery/gallery.component';
+import { UlfikComponent } from './components/ulfik/ulfik.component';
 
 
 @NgModule({
     declarations: [
         AppComponent,
         NavMenuComponent,
-        SearchComponent,
         FetchDataComponent,
         HomeComponent,
         FetchDataDonaComponent,
-        GalleryComponent
+        UlfikComponent
     ],
     imports: [
         CommonModule,
@@ -33,10 +31,9 @@ import { GalleryComponent } from './components/gallery/gallery.component';
         RouterModule.forRoot([
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', component: HomeComponent },
-            { path: 'search', component: SearchComponent },
             { path: 'fetch-data', component: FetchDataComponent },
             { path: 'fetch-data-dona', component: FetchDataDonaComponent },
-            { path: 'gallery', component: GalleryComponent },
+            { path: 'ulfik', component: UlfikComponent },
             { path: '**', redirectTo: 'home' }
         ]),
         AppCommonModule
