@@ -12,7 +12,7 @@ import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
     styleUrls: ['./fetchdata.component.css']
 })
 export class FetchDataComponent implements OnInit {
-    hideZeroValues: boolean = false;
+    hideZeroValues: boolean = true;
 
     public coins: Array<Coin>;
 

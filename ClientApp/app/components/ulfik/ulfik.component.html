@@ -1,23 +1,25 @@
-<table>
+<br>
+<table class="opttable">
     <tr>
-      <th>Aktueller Wert geschätzt</th>
-      <th>{{assetsValue | number}} €</th>
+        <th>Akt. Wert geschätzt</th>
+        <th>{{assetsValue | number}} €</th>
     </tr>
     <tr>
-        <td>Wert in BTC geschätzt</td>
+        <td style="width: 150px">Wert in BTC geschätzt</td>
         <td>{{assetsBTCValue}} BTC</td>
     </tr>
     <tr>
-      <td>Investiertes Geld</td>
-      <td><input [(ngModel)]="invested"> €</td>
+        <td>Investiertes Geld</td>
+        <td>
+            <input [(ngModel)]="invested"> €</td>
     </tr>
     <tr>
-      <td>+/-</td>
-      <td>{{ (assetsValue - invested) | number}} €</td>
+        <td>+/-</td>
+        <td style="font-weight: bold">{{ (assetsValue - invested) | number}} €</td>
     </tr>
 </table>
 
-<input type="checkbox" (change)="hideZeroChanged($event)"> Leere Werte verstecken
+<input type="checkbox" (change)="hideZeroChanged($event)" checked> Leere Werte verstecken
 
 <p *ngIf="!coins">
     <em>Lädt...</em>
@@ -29,34 +31,31 @@
             <th class="number">Rank</th>
             <th>Name</th>
             <th>Symbol</th>
-            <th class="number">€</th>
             <th class="number">Anzahl</th>
             <th class="number">Wert €</th>
-            <th class="number">BTC</th>
             <th class="number">Wert BTC</th>
-            <th class="number">$</th>
+            <th class="number">€/1</th>
+            <th class="number">BTC/1</th>
+            <th class="number">$/1</th>
             <th class="number">Δ 1h</th>
             <th class="number">Δ 24h</th>
             <th class="number">Δ 7d</th>
         </tr>
     </thead>
-    <tbody *ngFor="let coin of coins" >
+    <tbody *ngFor="let coin of coins">
         <tr *ngIf="coin.amount > 0 || !hideZeroValues">
             <td id="rank" class="number">{{ coin.rank }}</td>
             <td id="name">{{ coin.name }}</td>
             <td id="symbol">{{ coin.symbol }}</td>
-            <td id="price_eur" class="number">{{ coin.price_eur | number }}</td>
             <td id="amount" class="number">{{ coin.amount }}</td>
             <td id="value_eur" class="number">{{ coin.amount*coin.price_eur | number }}</td>
-            <td id="price_btc" class="number">{{ coin.price_btc }}</td>
             <td id="value_btc" class="number">{{ coin.amount*coin.price_btc }}</td>
+            <td id="price_eur" class="number">{{ coin.price_eur | number }}</td>
+            <td id="price_btc" class="number">{{ coin.price_btc }}</td>
             <td id="price_usd" class="number">{{ coin.price_usd | number }}</td>
-            <td id="percent_change_1h" class="number" 
-                [ngClass]="{'plus': coin.percent_change_1h > 0, 'minus': coin.percent_change_1h < 0}">{{ coin.percent_change_1h }}</td>
-            <td id="percent_change_24h" class="number" 
-                [ngClass]="{'plus': coin.percent_change_24h > 0, 'minus': coin.percent_change_24h < 0}">{{ coin.percent_change_24h }}</td>
-            <td id="percent_change_7d" class="number" 
-                [ngClass]="{'plus': coin.percent_change_7d > 0, 'minus': coin.percent_change_7d < 0}">{{ coin.percent_change_7d }}</td>
+            <td id="percent_change_1h" class="number" [ngClass]="{'plus': coin.percent_change_1h > 0, 'minus': coin.percent_change_1h < 0}">{{ coin.percent_change_1h }}</td>
+            <td id="percent_change_24h" class="number" [ngClass]="{'plus': coin.percent_change_24h > 0, 'minus': coin.percent_change_24h < 0}">{{ coin.percent_change_24h }}</td>
+            <td id="percent_change_7d" class="number" [ngClass]="{'plus': coin.percent_change_7d > 0, 'minus': coin.percent_change_7d < 0}">{{ coin.percent_change_7d }}</td>
         </tr>
     </tbody>
 </table>

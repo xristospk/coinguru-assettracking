@@ -11,7 +11,7 @@ import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
     styleUrls: ['./fetchdatadona.component.css']
 })
 export class FetchDataDonaComponent implements OnInit {
-
+    hideZeroValues: boolean = true;
     public coins: Array<Coin>;
 
     invested:number = 300;
@@ -24,6 +24,11 @@ export class FetchDataDonaComponent implements OnInit {
     };
 
     constructor(private cmcService: CmcService) {}
+
+    hideZeroChanged(event: any) {
+        this.hideZeroValues = event.target.checked;
+    }
+
 
     ngOnInit(): void {
         // debugger;
