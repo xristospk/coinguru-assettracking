@@ -21,13 +21,12 @@ export class FetchDataComponent implements OnInit {
     assetsBTCValue: number = 0;
 
     assets: { [symbol: string]: number; } = {
-        "EMC2": 175.00000000,
-        "BTC": -0.00494884,
+        "BTC": 0,
         "LTC": 10,
         "XLM": 400.62845000,
         "BTG": 0.41557555,
         "SALT": 511.26047071,
-        "KMD": 1690.98655546,
+        "KMD": 1700,
         "DGB": 8926.40980769,
         "XRP": 250,
         "XVG": 3300,
