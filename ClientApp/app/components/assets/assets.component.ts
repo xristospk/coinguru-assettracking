@@ -35,7 +35,7 @@ export class AssetsComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        // debugger;
+        debugger;
         this.cmcService.getCryptoCurrencies().subscribe(cryptoCurrencies => {
             const btcCurrency = cryptoCurrencies.find(cc => cc.symbol == "BTC");
             if(!btcCurrency)

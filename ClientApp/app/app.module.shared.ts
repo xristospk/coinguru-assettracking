@@ -7,11 +7,8 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './components/app/app.component';
 import { NavMenuComponent } from './components/navmenu/navmenu.component';
 import { HomeComponent } from './components/home/home.component';
-import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
-
 
 import { AppCommonModule } from './common/common.module';
-import { FetchDataDonaComponent } from './components/fetchdatadona/fetchdatadona.component';
 import { AssetsComponent } from './components/assets/assets.component';
 
 
@@ -19,9 +16,7 @@ import { AssetsComponent } from './components/assets/assets.component';
     declarations: [
         AppComponent,
         NavMenuComponent,
-        FetchDataComponent,
         HomeComponent,
-        FetchDataDonaComponent,
         AssetsComponent
     ],
     imports: [
@@ -31,8 +26,6 @@ import { AssetsComponent } from './components/assets/assets.component';
         RouterModule.forRoot([
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', component: HomeComponent },
-            { path: 'fetch-data', component: FetchDataComponent },
-            { path: 'fetch-data-dona', component: FetchDataDonaComponent },
             { path: 'assets', component: AssetsComponent },
             { path: '**', redirectTo: 'home' }
         ]),

@@ -9,7 +9,7 @@ import { CryptoCurrency, CoinMarketCapApiResultEntity } from '../models/coinMark
 export class CoinMarketCapService {
 
     private coinMarketCapApiUrl: string = "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest";
-    private API_KEY: string = "edcb12e1-3209-4801-8dcb-1329a053bac4";
+    private API_KEY: string = "your-coin-market-cap-api-key";
 
     constructor(private http: Http) {
     }
