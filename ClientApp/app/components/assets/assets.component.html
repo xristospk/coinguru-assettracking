@@ -1,15 +1,15 @@
 <br>
 <table class="opttable">
     <tr>
-        <th>Akt. Value geschätzt</th>
+        <th>Value in EUR estimated</th>
         <th>{{assetsValue | number}} €</th>
     </tr>
     <tr>
-        <td style="width: 150px">Value in BTC geschätzt</td>
+        <td style="width: 150px">Value in BTC estimated</td>
         <td>{{assetsBTCValue}} BTC</td>
     </tr>
     <tr>
-        <td>Investiertes Geld</td>
+        <td>Invested fiat money</td>
         <td>
             <input [(ngModel)]="invested"> €</td>
     </tr>
@@ -19,10 +19,10 @@
     </tr>
 </table>
 
-<input type="checkbox" (change)="hideZeroChanged($event)" checked> Leere Valuee verstecken
+<input type="checkbox" (change)="hideZeroChanged($event)" checked> Hide empty crypto values
 
 <p *ngIf="!coins">
-    <em>Lädt...</em>
+    <em>Fetching data...</em>
 </p>
 
 <table class='table' *ngIf="coins">

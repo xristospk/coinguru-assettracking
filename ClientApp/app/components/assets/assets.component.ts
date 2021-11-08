@@ -13,7 +13,9 @@ export class AssetsComponent implements OnInit {
 
     public cryptoCurrencies: Array<CryptoCurrency> = new Array<CryptoCurrency>();
 
+    //Define your invested fiat money here
     invested:number = 1000;
+    
     assetsValue: number = 0;
     assetsBTCValue: number = 0;
 
