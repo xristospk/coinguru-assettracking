@@ -18,6 +18,7 @@ export class FetchDataDonaComponent implements OnInit {
     assetsValue: number = 0;
     assetsBTCValue: number = 0;
 
+    //your assets here
     assets: { [symbol: string]: number; } = {
         "BTC": 0.0150015,
         "KMD": 60,

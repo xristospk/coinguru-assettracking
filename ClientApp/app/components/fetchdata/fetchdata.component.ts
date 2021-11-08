@@ -20,6 +20,7 @@ export class FetchDataComponent implements OnInit {
     assetsValue: number = 0;
     assetsBTCValue: number = 0;
 
+    // your assets here
     assets: { [symbol: string]: number; } = {
         "BTC": 0,
         "LTC": 10,

@@ -1,11 +1,11 @@
 <br>
 <table class="opttable">
     <tr>
-        <th>Akt. Wert geschätzt</th>
+        <th>Akt. Value geschätzt</th>
         <th>{{assetsValue | number}} €</th>
     </tr>
     <tr>
-        <td style="width: 150px">Wert in BTC geschätzt</td>
+        <td style="width: 150px">Value in BTC geschätzt</td>
         <td>{{assetsBTCValue}} BTC</td>
     </tr>
     <tr>
@@ -19,7 +19,7 @@
     </tr>
 </table>
 
-<input type="checkbox" (change)="hideZeroChanged($event)" checked> Leere Werte verstecken
+<input type="checkbox" (change)="hideZeroChanged($event)" checked> Leere Valuee verstecken
 
 <p *ngIf="!coins">
     <em>Lädt...</em>
@@ -31,9 +31,9 @@
             <th class="number">Rank</th>
             <th>Name</th>
             <th>Symbol</th>
-            <th class="number">Anzahl</th>
-            <th class="number">Wert €</th>
-            <th class="number">Wert BTC</th>
+            <th class="number">Amount</th>
+            <th class="number">Value €</th>
+            <th class="number">Value BTC</th>
             <th class="number">€/1</th>
             <th class="number">BTC/1</th>
             <th class="number">$/1</th>
