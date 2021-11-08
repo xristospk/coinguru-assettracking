@@ -6,19 +6,20 @@ import { Asset } from '../../common/models/asset';
 import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
 
 @Component({
-    selector: 'ulfik',
-    templateUrl: './ulfik.component.html',
-    styleUrls: ['./ulfik.component.css']
+    selector: 'assets',
+    templateUrl: './assets.component.html',
+    styleUrls: ['./assets.component.css']
 })
-export class UlfikComponent implements OnInit {
+export class AssetsComponent implements OnInit {
     hideZeroValues: boolean = true;
 
-    public coins: Array<Coin>;
+    public coins: Array<Coin> = new Array<Coin>();
 
     invested:number = 1000;
     assetsValue: number = 0;
     assetsBTCValue: number = 0;
 
+    //Define your assets here
     assets: { [symbol: string]: number; } = {
         "BTC": 0.03938556,
         "XLM": 207.73633725,

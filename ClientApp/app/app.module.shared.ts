@@ -12,7 +12,7 @@ import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 
 import { AppCommonModule } from './common/common.module';
 import { FetchDataDonaComponent } from './components/fetchdatadona/fetchdatadona.component';
-import { UlfikComponent } from './components/ulfik/ulfik.component';
+import { AssetsComponent } from './components/assets/assets.component';
 
 
 @NgModule({
@@ -22,7 +22,7 @@ import { UlfikComponent } from './components/ulfik/ulfik.component';
         FetchDataComponent,
         HomeComponent,
         FetchDataDonaComponent,
-        UlfikComponent
+        AssetsComponent
     ],
     imports: [
         CommonModule,
@@ -33,7 +33,7 @@ import { UlfikComponent } from './components/ulfik/ulfik.component';
             { path: 'home', component: HomeComponent },
             { path: 'fetch-data', component: FetchDataComponent },
             { path: 'fetch-data-dona', component: FetchDataDonaComponent },
-            { path: 'ulfik', component: UlfikComponent },
+            { path: 'assets', component: AssetsComponent },
             { path: '**', redirectTo: 'home' }
         ]),
         AppCommonModule
