@@ -1,0 +1,1 @@
+Create a CoinMarketCap (research real name) @ https://pro.coinmarketcap.com/signup/ and get your API-Key (Screenshot)

@@ -1,9 +1,7 @@
 import { Component, Inject } from '@angular/core';
-import { Http } from '@angular/http';
 import { CoinMarketCapService } from '../../common/services/coinmarketcap.service';
-import { Coin } from '../../common/models/coin';
-import { Asset } from '../../common/models/asset';
 import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
+import { CryptoCurrency } from '../../common/models/coinMarketCapApiResultEntity';
 
 @Component({
     selector: 'assets',
@@ -13,14 +11,14 @@ import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
 export class AssetsComponent implements OnInit {
     hideZeroValues: boolean = true;
 
-    public coins: Array<Coin> = new Array<Coin>();
+    public cryptoCurrencies: Array<CryptoCurrency> = new Array<CryptoCurrency>();
 
     invested:number = 1000;
     assetsValue: number = 0;
     assetsBTCValue: number = 0;
 
     //Define your assets here
-    assets: { [symbol: string]: number; } = {
+    currencyAssets: { [symbol: string]: number; } = {
         "BTC": 0.03938556,
         "XLM": 207.73633725,
         "KMD": 38.16751564,
@@ -36,20 +34,29 @@ export class AssetsComponent implements OnInit {
 
     ngOnInit(): void {
         // debugger;
-        this.cmcService.getCoins().subscribe(response => {
-            response.forEach(coin => {
+        this.cmcService.getCryptoCurrencies().subscribe(cryptoCurrencies => {
+            const btcCurrency = cryptoCurrencies.find(cc => cc.symbol == "BTC");
+            if(!btcCurrency)
+                throw new Error("BTC currency not found in CoinMarketCap API Response.");
 
-                var assetAmount = this.assets[coin.symbol];
-                if (assetAmount) {
-                    coin.amount = assetAmount;
-                    this.assetsValue += assetAmount * coin.price_eur;
-                    this.assetsBTCValue += assetAmount * coin.price_btc;
+            cryptoCurrencies.forEach(cryptoCurrency => {
+
+                var currencyAssetAmount = this.currencyAssets[cryptoCurrency.symbol];
+                if (currencyAssetAmount) {
+                    cryptoCurrency.amount = currencyAssetAmount;
+                    this.assetsValue += currencyAssetAmount * cryptoCurrency.quote.EUR.price;
+                    this.assetsBTCValue += currencyAssetAmount * this.getAssetsBTCValue(cryptoCurrency, btcCurrency);
                 } else {
-                    coin.amount = 0;
+                    cryptoCurrency.amount = 0;
                 }
             });
-            this.coins = response;
+            this.cryptoCurrencies = cryptoCurrencies;
         });
+    }
+
+    private getAssetsBTCValue(asset: CryptoCurrency, btcCurrency: CryptoCurrency): number {
+        const assetBTCValue = asset.quote.EUR.price / btcCurrency.quote.EUR.price;
+        return assetBTCValue;
     }
 
 }
