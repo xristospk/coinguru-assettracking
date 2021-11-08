@@ -6,9 +6,9 @@ import 'rxjs/add/operator/map';
 import { Coin } from '../models/coin';
 
 @Injectable()
-export class CmcService {
+export class CoinMarketCapService {
 
-    private cmcApiUrl: string = "https://api.coinmarketcap.com/v1/ticker/?convert=EUR";
+    private coinMarketCapApiUrl: string = "https://api.coinmarketcap.com/v1/ticker/?convert=EUR";
 
     constructor(private http: Http) {
     }
@@ -20,7 +20,7 @@ export class CmcService {
     }
 
     public getCoins(): Observable<Array<Coin>> {
-        return this.http.get(this.cmcApiUrl)
+        return this.http.get(this.coinMarketCapApiUrl)
         .map(r => r.json() as Array<Coin> )
         .catch(this.handleError);
     }

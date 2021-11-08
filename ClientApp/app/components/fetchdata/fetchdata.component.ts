@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { Http } from '@angular/http';
-import { CmcService } from '../../common/services/cmc.service';
+import { CoinMarketCapService } from '../../common/services/coinmarketcap.service';
 import { Coin } from '../../common/models/coin';
 import { Asset } from '../../common/models/asset';
 import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
@@ -14,7 +14,7 @@ import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
 export class FetchDataComponent implements OnInit {
     hideZeroValues: boolean = true;
 
-    public coins: Array<Coin>;
+    public coins: Array<Coin> | undefined;
 
     invested:number = 2601;
     assetsValue: number = 0;
@@ -37,7 +37,7 @@ export class FetchDataComponent implements OnInit {
         "XEM": 106
     };
 
-    constructor(private cmcService: CmcService) {}
+    constructor(private cmcService: CoinMarketCapService) {}
 
     hideZeroChanged(event: any) {
         this.hideZeroValues = event.target.checked;
