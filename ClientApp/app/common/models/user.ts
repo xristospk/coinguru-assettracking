@@ -1,8 +1,8 @@
 export class User {
-    userId: string;
-    surname: string;
-    givenname: string;
-    jobTitle: string;
+    userId!: string;
+    surname!: string;
+    givenname!: string;
+    jobTitle!: string;
 }
 
 export interface AADUser {
