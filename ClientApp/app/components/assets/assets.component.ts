@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { Http } from '@angular/http';
-import { CmcService } from '../../common/services/cmc.service';
+import { CoinMarketCapService } from '../../common/services/coinmarketcap.service';
 import { Coin } from '../../common/models/coin';
 import { Asset } from '../../common/models/asset';
 import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
@@ -28,7 +28,7 @@ export class AssetsComponent implements OnInit {
         "SC": 1620.755,
     };
 
-    constructor(private cmcService: CmcService) {}
+    constructor(private cmcService: CoinMarketCapService) {}
 
     hideZeroChanged(event: any) {
         this.hideZeroValues = event.target.checked;
