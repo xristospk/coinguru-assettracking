@@ -1,4 +1,3 @@
-using AzureToolkit.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.Webpack;
@@ -18,13 +17,6 @@ namespace AzureToolkit
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services) {
             services.AddMvc();
-
-            string user = "xristospk";
-            string password = "you-wish";
-            string database = "your.database.windows.net";
-            
-            var connection = $"Server=tcp:{database},1433;Initial Catalog=azuretoolkit;Persist Security Info=False;User ID={user};Password={password};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
-            services.AddDbContext<AzureToolkitContext>(options => options.UseSqlServer(connection));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
