@@ -24,7 +24,9 @@ namespace AzureToolkit {
 
             string user = "atpk";
             string pw = "you-wish";
-            var connection = $"Server=tcp:azuretoolkit-pk.database.windows.net,1433;Initial Catalog=azuretoolkit;Persist Security Info=False;User ID={user};Password={pw};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            string db = "your.database.windows.net";
+            
+            var connection = $"Server=tcp:{db}1433;Initial Catalog=azuretoolkit;Persist Security Info=False;User ID={user};Password={pw};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
             services.AddDbContext<AzureToolkitContext>(options => options.UseSqlServer(connection));
         }
 
