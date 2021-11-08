@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
-import { AzureHttpClient } from './services/azureHttpClient';
+import { CoinguruHttpClient } from './services/coinguruHttpClient.service';
 import { UserService } from './services/user.service';
 import { CoinMarketCapService } from './services/coinmarketcap.service';
 
 @NgModule({
-    providers: [AzureHttpClient, UserService, CoinMarketCapService]
+    providers: [CoinguruHttpClient, UserService, CoinMarketCapService]
 })
 export class AppCommonModule { }
