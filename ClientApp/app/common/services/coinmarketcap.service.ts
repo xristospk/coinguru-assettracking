@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 import { CryptoCurrency, CoinMarketCapApiResultEntity } from '../models/coinMarketCapApiResultEntity';
+import { CoinMarketCapMockResponse } from '../models/exampleCMCResponse'
 
 @Injectable()
 export class CoinMarketCapService {
@@ -22,12 +23,17 @@ export class CoinMarketCapService {
 
     public getCryptoCurrencies(): Observable<Array<CryptoCurrency>> {
         //https://coinmarketcap.com/api/documentation/v1/#section/Authentication
-        const headers= new Headers().append("X-CMC_PRO_API_KEY", this.API_KEY);
-
+        const headers = new Headers().append("X-CMC_PRO_API_KEY", this.API_KEY);
         var queryUrl = this.coinMarketCapApiUrl + "?start=1&limit=5000&convert=EUR"
         return this.http.get(queryUrl)
         .map(r => r.json() as CoinMarketCapApiResultEntity)
         .map(r => r.data)
         .catch(this.handleError);
+    }
+
+    public getCryptoCurrenciesMock(): Array<CryptoCurrency> {
+        let jsonString: string = CoinMarketCapMockResponse.apiResponse;
+        let entity: CoinMarketCapApiResultEntity = JSON.parse(jsonString);
+        return entity.data;
     }
 }
