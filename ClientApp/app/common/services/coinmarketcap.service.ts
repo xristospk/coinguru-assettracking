@@ -24,7 +24,7 @@ export class CoinMarketCapService {
     public getCryptoCurrencies(): Observable<Array<CryptoCurrency>> {
         //https://coinmarketcap.com/api/documentation/v1/#section/Authentication
         const headers = new Headers().append("X-CMC_PRO_API_KEY", this.API_KEY);
-        var queryUrl = this.coinMarketCapApiUrl + "?start=1&limit=5000&convert=EUR"
+        var queryUrl = this.coinMarketCapApiUrl + "?start=1&limit=100&convert=EUR"
         return this.http.get(queryUrl)
         .map(r => r.json() as CoinMarketCapApiResultEntity)
         .map(r => r.data)

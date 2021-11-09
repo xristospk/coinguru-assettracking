@@ -8,4 +8,5 @@ export class CurrencyViewModel {
     public percent_change_1h: string | undefined;
     public percent_change_24h: string | undefined;
     public percent_change_7d: string | undefined;
+    public percent_change_30d: string | undefined;
 }
