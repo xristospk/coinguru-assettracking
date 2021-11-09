@@ -9,18 +9,17 @@ import { CryptoCurrency } from '../../common/models/coinMarketCapApiResultEntity
     styleUrls: ['./assets.component.css']
 })
 export class AssetsComponent implements OnInit {
-    hideZeroValues: boolean = true;
-
+    
+    public hideZeroValues: boolean = true;
     public cryptoCurrencies: Array<CryptoCurrency> = new Array<CryptoCurrency>();
+    public assetsValue: number = 0;
+    public assetsBTCValue: number = 0;
 
     //Define your invested fiat money here
-    invested:number = 1000;
-    
-    assetsValue: number = 0;
-    assetsBTCValue: number = 0;
+    public invested:number = 1000;
 
     //Define your assets here
-    currencyAssets: { [symbol: string]: number; } = {
+    public currencyAssets: { [symbol: string]: number; } = {
         "BTC": 0.03938556,
         "XLM": 207.73633725,
         "KMD": 38.16751564,
