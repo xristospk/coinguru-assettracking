@@ -25,7 +25,9 @@ Made with 🧠 by Cloud Analytics <br>
 
 <img src="https://cdn.worldvectorlogo.com/logos/linktree-2.svg" alt="drawing" width="20"/>  [xristospk](https://www.linktr.ee/xristospk)
 
-<img src="https://user-images.githubusercontent.com/26623619/135774582-194d8c26-47de-455f-9746-98a06dd0e509.png" alt="drawing" width="20"/>  [Patrick 'Xristos' Krybus](https://www.xing.com/profile/PatrickXristos_Krybus)
+<img src="https://user-images.githubusercontent.com/26623619/135774582-194d8c26-47de-455f-9746-98a06dd0e509.png" alt="drawing" width="20"/>  [Patrick 'Xristos' Krybus](https://www.linkedin.com/in/xristospk/)
+
+<img src="https://user-images.githubusercontent.com/26623619/141059102-abaa0e66-e220-4aae-9a00-5f652d5d4cad.png" alt="drawing" width="20"/>  [Patrick 'Xristos' Krybus](https://www.xing.com/profile/PatrickXristos_Krybus)
 
 <img src="https://user-images.githubusercontent.com/26623619/135774544-e9215840-e364-4386-b409-180c12ade8c3.png" alt="drawing" width="20"/>  [kbs.xrs](http://instagram.com/kbs.xrs/)
 
